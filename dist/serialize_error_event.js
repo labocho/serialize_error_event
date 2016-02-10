@@ -16,9 +16,9 @@ var ERROR_OBJECT_PROPS = ["columnNumber", "description", "fileName", "lineNumber
 
 // Array.isArray polyfill
 if (Array.isArray) {
-  var _isArray = Array.isArray;
+  var isArray = Array.isArray;
 } else {
-  var _isArray2 = function _isArray2(arg) {
+  var isArray = function isArray(arg) {
     return Object.prototype.toString.call(arg) === '[object Array]';
   };
 }
@@ -67,7 +67,7 @@ function SerializeObject(obj) {
       serialized = obj;
       break;
     case "object":
-      if (isArray(obj)) {
+      if (Array.isArray(obj)) {
         var serialized_array = [];
         var _iteratorNormalCompletion2 = true;
         var _didIteratorError2 = false;
@@ -77,7 +77,7 @@ function SerializeObject(obj) {
           for (var _iterator2 = obj[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
             var element = _step2.value;
 
-            serialized_array[i] = SerializeObject(element);
+            serialized_array.push(SerializeObject(element));
           }
         } catch (err) {
           _didIteratorError2 = true;

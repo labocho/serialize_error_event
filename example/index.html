@@ -1,8 +1,8 @@
 <!doctype html>
-<script src="../dist/serialize_error_event.js"></script>
+<script src="../dist/error_event_serializer.js"></script>
 <script>
   window.addEventListener("error", function(e) {
-    var serialized = SerializeErrorEvent(e);
+    var serialized = ErrorEventSerializer(e);
     console.log(serialized);
   }, false);
 

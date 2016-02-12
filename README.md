@@ -1,17 +1,17 @@
-# SerializeErrorEvent
+# ErrorEventSerializer
 
 Serializing ErrorEvent object for browsers.
 
 # Example
 
-    // import SerializeErrorEvent from "serialize_error_event";
+    // import ErrorEventSerializer from "error_event_serializer";
     //   Or
-    // var SerializeErrorEvent = require("serialize_error_event");
+    // var ErrorEventSerializer = require("error_event_serializer");
     //   Or
-    // <script src="dist/serialize_error_event.js"></script>
+    // <script src="dist/error_event_serializer.js"></script>
 
     window.addEventListener("error", function(e) {
-      var serialized = SerializeErrorEvent(e);
+      var serialized = ErrorEventSerializer(e);
       console.log(serialized);
       console.log(JSON.stringify(serialized));
     }, false);

@@ -1,11 +1,11 @@
 {
-  "name": "serialize_error_event",
+  "name": "error_event_serializer",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/serialize_error_event.js",
+  "main": "lib/error_event_serializer.js",
   "scripts": {
-    "build": "browserify lib/serialize_error_event.js --standalone SerializeErrorEvent -o dist/serialize_error_event.js -t babelify",
-    "watch": "watchify lib/serialize_error_event.js --standalone SerializeErrorEvent -o dist/serialize_error_event.js -t babelify -v",
+    "build": "browserify lib/error_event_serializer.js --standalone ErrorEventSerializer -o dist/error_event_serializer.js -t babelify",
+    "watch": "watchify lib/error_event_serializer.js --standalone ErrorEventSerializer -o dist/error_event_serializer.js -t babelify -v",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -7,8 +7,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 // Chrome uses: message, stack
 // FireFox uses: fileName, lineNumber, message, stack
 // Edge/IE uses: description, message, name, number, stack
-// (Safari's ErrorEvent object has no `error` property.)
-var ERROR_OBJECT_PROPS = ["columnNumber", "description", "fileName", "lineNumber", "message", "name", "stack"];
+// Safari uses: column, line, message, sourceURL, stack
+// (but Safari's ErrorEvent object has no `error` property.)
+var ERROR_OBJECT_PROPS = ["column", "columnNumber", "description", "fileName", "line", "lineNumber", "message", "name", "sourceURL", "stack"];
 
 // Array.isArray polyfill
 if (Array.isArray) {

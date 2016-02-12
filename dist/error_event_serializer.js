@@ -125,7 +125,11 @@ function SerializeErrorEvent(e) {
   return serialized;
 }
 
-module.exports = SerializeErrorEvent;
+module.exports = {
+  serialize: SerializeErrorEvent,
+  serializeError: SerializeErrorObject,
+  serializeObject: SerializeObject
+};
 
 },{}]},{},[1])(1)
 });

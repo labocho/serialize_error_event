@@ -1,10 +1,18 @@
 <!doctype html>
 <script src="../dist/error_event_serializer.js"></script>
 <script>
+  // Serialize error object
+  try {
+    bar()
+  } catch(e) {
+    console.log(ErrorEventSerializer.serializeError(e));
+  }
+
+  // Serialize error event
   window.addEventListener("error", function(e) {
-    var serialized = ErrorEventSerializer(e);
+    var serialized = ErrorEventSerializer.serialize(e);
     console.log(serialized);
   }, false);
 
-  foo()
+  foo();
 </script>

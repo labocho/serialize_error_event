@@ -11,7 +11,7 @@ Serializing ErrorEvent object for browsers.
     // <script src="dist/error_event_serializer.js"></script>
 
     window.addEventListener("error", function(e) {
-      var serialized = ErrorEventSerializer(e);
+      var serialized = ErrorEventSerializer.serialize(e);
       console.log(serialized);
       console.log(JSON.stringify(serialized));
     }, false);

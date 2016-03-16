@@ -9,7 +9,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 // Edge/IE uses: description, message, name, number, stack
 // Safari uses: column, line, message, sourceURL, stack
 // (but Safari's ErrorEvent object has no `error` property.)
-var ERROR_OBJECT_PROPS = ["column", "columnNumber", "description", "fileName", "line", "lineNumber", "message", "name", "sourceURL", "stack"];
+var ERROR_OBJECT_PROPS = ["column", "columnNumber", "description", "fileName", "line", "lineNumber", "message", "name", "number", "sourceURL", "stack"];
 
 // Array.isArray polyfill
 if (Array.isArray) {
@@ -32,7 +32,7 @@ function SerializeErrorObject(e) {
     for (var _iterator = ERROR_OBJECT_PROPS[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       var prop = _step.value;
 
-      if (e.hasOwnProperty(prop)) {
+      if (typeof e[prop] !== "undefined") {
         serialized[prop] = e[prop];
       }
     }
